@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# 💬 Agentic Chatbot Frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the React-based frontend for the **Agentic AI Chatbot**, which communicates with a rule-based FastAPI backend. It provides a clean chat interface with visible agent trace, designed for transparency and modularity.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- Simple, responsive chat UI built with React
+- Communicates with FastAPI backend at `http://localhost:8000`
+- Displays which agent handled the response
+- Handles spam and profanity gracefully
+- Extensible component design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Tech Stack
 
-### `npm test`
+- React (via Create React App)
+- JavaScript (ES6)
+- CSS (inline styles for simplicity)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+agentic-chatbot-frontend/
+├── public/
+├── src/
+│   ├── App.js
+│   ├── Chat.jsx
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Setup & Run
 
-### `npm run eject`
+### 1. Clone or Create the Project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you haven't created the app yet:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npx create-react-app agentic-chatbot-frontend
+cd agentic-chatbot-frontend
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then, add the `Chat.jsx` component as described.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Install Dependencies
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Run the App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+Open your browser and navigate to:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+http://localhost:3000
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔗 Backend Integration
 
-### Making a Progressive Web App
+Ensure the backend is running at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+http://localhost:8000
+```
 
-### Advanced Configuration
+This is required for the chat to function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 💡 Example Messages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| User Input                | Bot Response                          | Agent           |
+|---------------------------|----------------------------------------|------------------|
+| `help`                    | Shows help text                        | `help`           |
+| `what is the server health` | Shows CPU and memory usage            | `server health`  |
+| `buy now it is good`      | Warns about spam                       | `moderation`     |
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📌 Future Enhancements
+
+- Add typing indicator
+- Improve UI with animations and avatars
+- Integrate session history
+- Add context-aware agents
+
+---
+
+## 🧑‍💻 Author
+
+Built as part of an Agentic AI prototype by Venkatesan Subramanian. Frontend talks to a FastAPI backend that performs agent selection using a factory method.
